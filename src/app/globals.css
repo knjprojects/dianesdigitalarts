@@ -30,4 +30,15 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  @layer components{
+    
+  }
+  .cursor-default {
+    cursor: url('/assets/img/pointer.png'), auto;
+  }
+  
+  .cursor-hover {
+    cursor: url('/assets/img/brush.png'), auto;
+  }
+  
 }
