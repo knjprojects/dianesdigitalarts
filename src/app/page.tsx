@@ -1,13 +1,19 @@
+// pages/Home.tsx
+import { AppProps } from 'next/app';
+import { AnimatePresence } from 'framer-motion';
 import ScrollAnimation from "@/components/ScrollAnimation";
 import TypeWriter from "@/components/TypeWriter";
-import Image from "next/image";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className=""></div>
-     <TypeWriter />
-     <ScrollAnimation />
+    <AnimatePresence mode="wait">
      
-    </main>
+
+      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <div className=""></div>
+        <TypeWriter />
+        <ScrollAnimation />
+      </main>
+    </AnimatePresence>
   );
 }

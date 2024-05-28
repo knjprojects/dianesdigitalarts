@@ -7,8 +7,26 @@ import pallette2 from "../../public/assets/img/pallette2.png"
 import SignInButton from "./SignInButton";
 import SignOutButton from "./SignOutButton";
 import { auth } from '@/auth';
-const Palette = async() => {
-    const session = await auth();
+import Lottie from 'lottie-react';
+import { useRouter } from 'next/navigation';
+import animation from "../../public/assets/animations/colors.json"
+// Loading Animation Component
+const LoadingAnimation = () => (
+  <Lottie
+    animationData={animation}
+    autoplay
+    loop
+  />
+);
+
+const Palette = () => {
+  const router=useRouter();     
+
+  const [isRouting,setRouting]:any=useState(false)
+  const getAuth=async()=>{
+    return await auth();
+  }
+    const session:any = getAuth()
   const nextauthuser = session?.user!;
   const nextauthemail = nextauthuser.email;
   //const isAdmin = user?.email === process.env.ADMIN_EMAIL;
@@ -18,8 +36,14 @@ const Palette = async() => {
  
   const handleColorClick = (color:string) => {
     console.log(`Selected color: ${color}`);
+    setRouting(true)
+    if(color=="red"){
+      
+      router.push("/blog")
+      setRouting(false)
+    }
   };
-
+  if(!isRouting)
   return (
     <div  onMouseEnter={() => setIsHovered(true)}
     onMouseLeave={() => setIsHovered(false)} className={`transition-all ease-in-out duration-400 delay-200 hover:scale-75 items-center relative group w-72 h-72 ${isHovered ? 'cursor-hover' : 'cursor-default'}`}>
@@ -69,6 +93,11 @@ const Palette = async() => {
       ></button>
     </div>
   );
+  return(
+    <div>
+       
+    </div>
+  )
 };
 
 export default Palette;

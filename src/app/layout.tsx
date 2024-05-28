@@ -8,7 +8,27 @@ export const metadata: Metadata = {
   title: "Dian'es Digital Arts",
   description: "A showcase of art creations by Diane",
 };
-
+import localFont from 'next/font/local'
+const rustic = localFont({
+  src: [
+    {
+      path: '../../public/assets/fonts/Rustic.otf',
+      weight: '200'
+    },
+    
+  ],
+  variable: '--font-rustic'
+})
+const bariol = localFont({
+  src: [
+    {
+      path: '../../public/assets/fonts/bariol.otf',
+      weight: '400'
+    },
+    
+  ],
+  variable: '--font-bariol'
+})
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -16,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} ${rustic.variable} ${bariol.variable}`}>
         <Layout>{children}</Layout>
         </body>
     </html>

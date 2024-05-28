@@ -1,0 +1,44 @@
+"use client"
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import Lottie from 'lottie-react';
+import animation from "../../public/assets/animations/colors.json"
+// Loading Animation Component
+const LoadingAnimation = () => (
+  <Lottie
+    animationData={animation}
+    autoplay
+    loop
+  />
+);
+
+// Page Transition Wrapper Component
+const PageTransition: React.FC = ({ children }:any) => {
+  const router = useRouter();
+  const [isRouting, setIsRouting] = useState(false);
+
+  useEffect(() => {
+    const handleStart = () => setIsRouting(true);
+    const handleComplete = () => setIsRouting(false);
+    
+
+    /*router.events.on('routeChangeStart', handleStart);
+    router.events.on('routeChangeComplete', handleComplete);
+    router.events.on('routeChangeError', handleComplete);
+
+    return () => {
+      router.events.off('routeChangeStart', handleStart);
+      router.events.off('routeChangeComplete', handleComplete);
+      router.events.off('routeChangeError', handleComplete);
+    };
+  }, []);
+
+  return (
+    <>
+      {isRouting && <LoadingAnimation />}
+      {children}
+    </>
+  );
+};
+
+export default PageTransition;
