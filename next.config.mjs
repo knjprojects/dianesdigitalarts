@@ -6,8 +6,8 @@ const nextConfig = {
         remotePatterns: [
           {
             protocol: 'https',
-            hostname: 'i.ytimg.com', // Empty string allows all domains
-          },
+            hostname: 'img.daisyui.com'//'i.ytimg.com', // Empty string allows all domains
+          }/*,
           {
             protocol: 'https',
             hostname: 'lh3.googleusercontent.com', // Empty string allows all domains
@@ -15,7 +15,7 @@ const nextConfig = {
           {
             protocol: 'https',
             hostname: 'images.google.com', // Empty string allows all domains
-          },
+          },*/
         
         ],
          // domains: ['lh3.googleusercontent.com','images.google.com','google.com','i.ytimg.com'], // Add your domain here

@@ -1,3 +1,4 @@
+
 import { signIn } from "@/auth";
 //types can be github, google
 const SignInButton = ({ type }: { type: string }) => {
@@ -6,7 +7,7 @@ const SignInButton = ({ type }: { type: string }) => {
       <form
         className="bg-gray-800 p-6 rounded shadow-md"
         action={async () => {
-          "use server";
+          //"use server";
           await signIn(type);
         }}
       >

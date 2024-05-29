@@ -22,6 +22,9 @@ const config = {
       },
     },
     extend: {
+      cusror:{
+        'fancy': 'url(https://static.vecteezy.com/system/resources/previews/021/996/885/non_2x/hand-cursor-icon-clip-art-free-png.png), pointer',
+      },
       fontFamily:{
         //Poppins: ["Poppins", "sans-serif"],
         //merienda: ["Merienda",...defaultTheme.fontFamily.sans],
@@ -45,10 +48,7 @@ const config = {
         //'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         //'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-      /*cursor: {
-        custom: 'url("/assets/img/pointer.png"), auto', // Default cursor image
-        hover: 'url("/assets/img/brush.png"), auto',    // Hover cursor image
-      },*/
+     
       boxShadow: {
         neon: "0 0 5px theme('colors.purple.200'), 0 0 20px theme('colors.purple.700')",
       },
